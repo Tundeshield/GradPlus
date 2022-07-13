@@ -14,9 +14,9 @@ namespace GradPlus
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "Admins",
+               name: "Jobs",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Admin", action = "GetAdmins", id = UrlParameter.Optional }
+               defaults: new { controller = "Job", action = "GetJobs", id = UrlParameter.Optional }
            );
             routes.MapRoute(
                 name: "Default",
