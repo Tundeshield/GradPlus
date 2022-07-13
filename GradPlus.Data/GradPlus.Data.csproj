@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DAO\AdminDAO.cs" />
     <Compile Include="IDAO\IAdminDAO.cs" />
+    <Compile Include="IDAO\IEmployer.cs" />
     <Compile Include="Models\Domain\Admin.cs" />
     <Compile Include="Models\Domain\CompanyCategory.cs" />
     <Compile Include="Models\Domain\Employer.cs" />
