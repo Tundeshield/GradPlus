@@ -13,7 +13,22 @@ namespace GradPlus.Data.DAO
     {
         public IList<Job> GetJobs(GradPlusContext context)
         {
+            //The implementation will return all the jobs from the database in the form of a list
             return context.Jobs.ToList();
+        }
+
+        public Job GetJob(GradPlusContext context, int id)
+        {
+            //This implementation will return a single job from the list
+            return context.Jobs.ToList().Find(x => x.ID == id);
+        }
+
+        public void PostJob(GradPlusContext context, Job job)
+        {
+            //This implementation will create a post job method
+            context.Jobs.Add(job);
+            context.SaveChanges();
+
         }
     }
 }

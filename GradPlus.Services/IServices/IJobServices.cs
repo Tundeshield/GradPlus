@@ -9,6 +9,10 @@ namespace GradPlus.Services.IServices
 {
     public interface IJobServices
     {
-        IList<Job> GetJobs();
+        IList<Job> GetJobs(); //Method to get the List of Job
+
+        Job GetJob(int id);//Method to get the Details of Job
     }
+
+    
 }

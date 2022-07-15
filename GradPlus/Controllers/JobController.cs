@@ -20,7 +20,14 @@ namespace GradPlus.Controllers
 
         public ActionResult GetJobs()
         {
+            //List of jobs
             return View(jobServices.GetJobs());
+        }
+
+        public ActionResult GetJob(int id)
+        {
+            //Detail of each Job
+            return View(jobServices.GetJob(id));
         }
 
         public ActionResult Index()
