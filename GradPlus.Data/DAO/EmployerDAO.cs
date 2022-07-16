@@ -12,7 +12,6 @@ namespace GradPlus.Data.DAO
 {
     public class EmployerDAO : IEmployerDAO
     {
-
         //Create Employer
         public void CreateEmployer(Employer employer, GradPlusContext context)
         {
@@ -21,37 +20,45 @@ namespace GradPlus.Data.DAO
         }
 
         //Get Employer By Id
-        public Employer GetById(int employerId, GradPlusContext context)
+        public Employer GetEmployerById(int employerId, GradPlusContext context)
         {
             var employer = context.Employers.Where(e => e.ID == employerId).FirstOrDefault();
             return employer;
         }
 
-        //Delete Employer
-        public void DeleteEmployer(int employerId, GradPlusContext context)
-        {
-            var employer= context.Employers.Where(e => e.ID == employerId).FirstOrDefault();
-            context.Employers.Remove(employer);
-        }
-
         //Get all Employers
-        public IList<Employer> GetAll(GradPlusContext context)
+        public IList<Employer> GetAllEmployers(GradPlusContext context)
         {
-            return (IList<Employer>)context.Employers.OrderBy(emp => emp.CompanyName);
+           return context.Employers.ToList();
         }
 
         //Get Employer Jobs
         public IList<Job> GetEmployerJobs(int employerId, GradPlusContext context)
-        {           
+        {
             //Get Employer
-            var employer= context.Employers.Include(s=> s.Jobs).Where(e => e.ID == employerId).FirstOrDefault();          
+            var employer = context.Employers.Include(s => s.Jobs).Where(e => e.ID == employerId).FirstOrDefault();
             //Get Employer Jobs
             return (IList<Job>)employer.Jobs;
         }
 
-        //Update Employer
-        //public void UpdateEmployer(Employer employer, GradPlusContext context)
-        //{          
-        //}
+        public void UpdateEmployer(Employer employer, int employerId, GradPlusContext context)
+        {
+            context.Employers.Find(employerId).Profile_Img = employer.Profile_Img;
+            context.Employers.Find(employerId).CompanyName = employer.CompanyName;
+            context.Employers.Find(employerId).CompanyDescription = employer.CompanyDescription;
+            context.Employers.Find(employerId).Website = employer.Website;
+            context.Employers.Find(employerId).EmployeeCount = employer.EmployeeCount;
+            context.Employers.Find(employerId).YearFounded = employer.YearFounded;
+            context.SaveChanges();
+        }
+
+        //Delete Employer
+        public void DeleteEmployer(int employerId, GradPlusContext context)
+        {
+            var employer = context.Employers.Where(e => e.ID == employerId).FirstOrDefault();
+            context.Employers.Remove(employer);
+            context.SaveChanges();
+        }
+
     }
 }
