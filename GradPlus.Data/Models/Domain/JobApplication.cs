@@ -11,5 +11,6 @@ namespace GradPlus.Data.Models.Domain
         public int ID { get; set; }
         public int JobID { get; set; }
         public int JobSeekerID { get; set; }
+        public DateTime JobAppliedDate { get; set; }
     }
 }
