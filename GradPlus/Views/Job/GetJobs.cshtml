@@ -17,16 +17,16 @@
         <th>
             @Html.DisplayNameFor(model => model.JobTitle)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ComapanyEmail)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CompanyWebsite)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.CompanyAddress)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
@@ -34,7 +34,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Plan)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -46,16 +46,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.JobTitle)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ComapanyEmail)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CompanyWebsite)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.CompanyAddress)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
@@ -63,12 +63,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Plan)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>*@
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+            @Html.ActionLink("Details", "GetJob", new { id=item.ID, Controller="Job" }) 
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+        </td>
     </tr>
 }
 
