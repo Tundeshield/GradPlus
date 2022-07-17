@@ -1,4 +1,5 @@
-﻿using GradPlus.Services.IServices;
+﻿using GradPlus.Models;
+using GradPlus.Services.IServices;
 using GradPlus.Services.Services;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,17 @@ namespace GradPlus.Controllers
         // GET: Employer
         public ActionResult Index()
         {
-            var employers = employerService.GetAllEmployers();
+            var employers = employerService.GetAllEmployers().Select(employer => new EmployerControllerViewModel
+            {
+                ID = employer.ID,
+                Email = employer.Email,
+                DateRegistered = employer.DateRegistered,
+                CompanyName = employer.CompanyName,
+                Website = employer.Website,
+                EmployeeCount = employer.EmployeeCount,
+                YearFounded = employer.YearFounded
+
+            }).ToList();
             return View(employers);
         }
 

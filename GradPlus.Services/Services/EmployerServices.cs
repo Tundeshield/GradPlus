@@ -2,6 +2,7 @@
 using GradPlus.Data.IDAO;
 using GradPlus.Data.Models.Domain;
 using GradPlus.Data.Repository;
+using GradPlus.Services.DTO;
 using GradPlus.Services.IServices;
 using System;
 using System.Collections.Generic;
@@ -20,24 +21,33 @@ namespace GradPlus.Services.Services
             employerDAO = new EmployerDAO();
         }
 
-
-
-        public void CreateEmployer(Employer employer)
+        public void CreateEmployer(PostEmployerDTO employer)
         {
+            Employer newEmployer = new Employer()
+            {
+                UserName = employer.UserName,
+                Email = employer.Email,
+                Profile_Img = employer.Profile_Img,
+                CompanyName = employer.CompanyName,
+                CompanyDescription = employer.CompanyDescription,
+                Website = employer.Website,
+                EmployeeCount = employer.EmployeeCount,
+                YearFounded = employer.YearFounded
+
+            };
            using (var context= new GradPlusContext())
             {
-                employerDAO.CreateEmployer(employer, context);
+                employerDAO.CreateEmployer(newEmployer, context);
             }
         }
-
         public void DeleteEmployer(int employerId)
         {
+            
             using(var context= new GradPlusContext())
             {
                 employerDAO.DeleteEmployer(employerId, context);
             }
-        }
-
+        }     
         public IList<Employer> GetAllEmployers()
         {
            using(var context= new GradPlusContext())
@@ -46,16 +56,26 @@ namespace GradPlus.Services.Services
                 return employers; 
             } 
         }
-
-        public Employer GetEmployerById(int employerId)
+        public GetEmployerDTO GetEmployerById(int employerId)
         {
            using(var context= new GradPlusContext())
             {
                 var employer = employerDAO.GetEmployerById(employerId, context);
-                return employer;
+                GetEmployerDTO employerDTO = new GetEmployerDTO()
+                {
+                    ID = employer.ID,
+                    UserName = employer.UserName,
+                    Email = employer.Email,
+                    Profile_Img = employer.Profile_Img,
+                    CompanyName = employer.CompanyName,
+                    CompanyDescription = employer.CompanyDescription,
+                    Website = employer.Website,
+                    EmployeeCount = employer.EmployeeCount,
+                    YearFounded = employer.YearFounded
+                };
+                return employerDTO;
             }
         }
-
         public IList<Job> GetEmployerJobs(int employerId)
         {
             using(var context= new GradPlusContext())
@@ -64,12 +84,43 @@ namespace GradPlus.Services.Services
                 return employerJobs;
             }
         }
-
-        public void UpdateEmployer(Employer employer, int employerId)
+        public void UpdateEmployer(PostEmployerDTO employer, int employerId)
         {
-            using(var context= new GradPlusContext())
+            Employer newEmployer = new Employer()
             {
-                employerDAO.UpdateEmployer(employer, employerId, context);
+                UserName = employer.UserName,
+                Email = employer.Email,
+                Profile_Img = employer.Profile_Img,
+                CompanyName = employer.CompanyName,
+                CompanyDescription = employer.CompanyDescription,
+                Website = employer.Website,
+                EmployeeCount = employer.EmployeeCount,
+                YearFounded = employer.YearFounded
+
+            };
+            using (var context= new GradPlusContext())
+            {
+                employerDAO.UpdateEmployer(newEmployer, employerId, context);
+            }
+        }
+        public PostEmployerDTO EditEmployer(int employerID)
+        {
+            using (var context = new GradPlusContext())
+            {
+                var employer = employerDAO.GetEmployerById(employerID, context);
+                PostEmployerDTO employerDTO = new PostEmployerDTO()
+                {
+
+                    UserName = employer.UserName,
+                    Email = employer.Email,
+                    Profile_Img = employer.Profile_Img,
+                    CompanyName = employer.CompanyName,
+                    CompanyDescription = employer.CompanyDescription,
+                    Website = employer.Website,
+                    EmployeeCount = employer.EmployeeCount,
+                    YearFounded = employer.YearFounded
+                };
+                return employerDTO;
             }
         }
     }

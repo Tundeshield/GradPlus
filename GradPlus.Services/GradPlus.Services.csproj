@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\GetEmployerDTO.cs" />
+    <Compile Include="DTO\PostEmployerDTO.cs" />
     <Compile Include="IServices\IAdminServices.cs" />
     <Compile Include="IServices\IEmployerServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

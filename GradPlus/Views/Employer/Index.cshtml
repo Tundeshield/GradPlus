@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GradPlus.Data.Models.Domain.Employer>
+﻿@model IEnumerable<GradPlus.Models.EmployerControllerViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -12,25 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Profile_Img)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DateRegistered)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CompanyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CompanyDescription)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Website)
@@ -47,25 +35,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Profile_Img)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateRegistered)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyDescription)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Website)
