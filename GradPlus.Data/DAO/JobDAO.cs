@@ -30,5 +30,18 @@ namespace GradPlus.Data.DAO
             context.SaveChanges();
 
         }
+
+        public void EditJob(GradPlusContext context, Job job, int id)
+        {
+            //edit the details of the job
+            context.Jobs.Find(id).CompanyName = job.CompanyName;
+            context.Jobs.Find(id).Description = job.Description;
+            context.Jobs.Find(id).CompanyAddress = job.CompanyAddress;
+            context.Jobs.Find(id).JobTitle = job.JobTitle;
+            context.Jobs.Find(id).ComapanyEmail = job.ComapanyEmail;
+            context.Jobs.Find(id).CompanyWebsite = job.CompanyWebsite;
+            context.Jobs.Find(id).Salary = job.Salary;
+            context.SaveChanges();
+        }
     }
 }

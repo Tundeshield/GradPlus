@@ -19,5 +19,8 @@ namespace GradPlus.Data.IDAO
 
         //This method will create a Job post
         void PostJob(GradPlusContext context, Job job);
+
+        //This method will edit a job details
+        void EditJob(GradPlusContext context, Job job, int id);
     }
 }

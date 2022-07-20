@@ -12,6 +12,7 @@ namespace GradPlus.Services.IServices
         IList<Job> GetJobs(); //Method to get the List of Job
 
         Job GetJob(int id);//Method to get the Details of Job
+        //void EditJob(Job job, int id);
     }
 
     
