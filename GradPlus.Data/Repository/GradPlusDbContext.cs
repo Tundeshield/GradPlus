@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GradPlus.Data.Repository
 {
     public class GradPlusContext:DbContext
@@ -24,6 +25,7 @@ namespace GradPlus.Data.Repository
         public DbSet<JobApplication> JobApplications { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public System.Data.Entity.DbSet<GradPlus.Models.EmployerControllerViewModel> EmployerControllerViewModels { get; set; }
     }
 
 
