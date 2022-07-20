@@ -54,10 +54,12 @@
     <Compile Include="DTO\GetEmployerDTO.cs" />
     <Compile Include="DTO\PostEmployerDTO.cs" />
     <Compile Include="IServices\IAdminServices.cs" />
+
     <Compile Include="IServices\IEmployerServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdminServices.cs" />
     <Compile Include="Services\EmployerServices.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GradPlus.Data\GradPlus.Data.csproj">
