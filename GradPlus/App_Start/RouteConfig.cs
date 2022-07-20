@@ -14,15 +14,17 @@ namespace GradPlus
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "Jobs",
+
+               name: "Employers",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Job", action = "GetJobs", id = UrlParameter.Optional }
+               defaults: new { controller = "Employer", action = "Index", id = UrlParameter.Optional }
+
            );
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

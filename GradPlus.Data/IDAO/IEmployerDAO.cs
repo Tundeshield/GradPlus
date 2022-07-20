@@ -10,6 +10,13 @@ namespace GradPlus.Data.IDAO
 {
     public interface IEmployerDAO
     {
-        IList<Employer> GetEmployers(GradPlusContext context);
+
+        void CreateEmployer(Employer employer, GradPlusContext context);
+        Employer GetEmployerById(int employerId, GradPlusContext context);
+        void UpdateEmployer(Employer employer, int employerId, GradPlusContext context);
+        void DeleteEmployer(int employerId, GradPlusContext context);
+        IList<Employer> GetAllEmployers(GradPlusContext context);
+        IList<Job> GetEmployerJobs(int employerId, GradPlusContext context);
+
     }
 }
