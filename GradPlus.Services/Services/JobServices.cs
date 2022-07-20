@@ -35,5 +35,10 @@ namespace GradPlus.Services.Services
                 return jobDAO.GetJob(context,id);
             }
         }
+
+        public void EditJob(Job job, int id)
+        {
+            
+        }
     }
 }

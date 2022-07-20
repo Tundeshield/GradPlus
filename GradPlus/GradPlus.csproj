@@ -168,8 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+<<<<<<< HEAD
+=======
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
+>>>>>>> master
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -239,11 +242,19 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Job\GetJobs.cshtml" />
+    <Content Include="Views\Job\GetJob.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+=======
     <Content Include="Views\Admin\GetAdmins.cshtml" />
 
     <Content Include="Views\Employer\Index.cshtml" />
     <Content Include="Views\Employer\GetEmployerDetails.cshtml" />
 
+>>>>>>> master
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
