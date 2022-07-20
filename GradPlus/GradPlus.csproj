@@ -244,6 +244,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Admin\GetAdmins.cshtml" />
     <Content Include="Views\Employer\Index.cshtml" />
+    <Content Include="Views\Employer\GetEmployerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
